@@ -8,6 +8,8 @@ gem "pg", "~> 1.1"
 gem "puma", "~> 5.0"
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 gem "bootsnap", require: false
+gem 'redis', '~> 5.1'
+gem 'active_model_serializers', '~> 0.10.14'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
