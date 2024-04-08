@@ -14,10 +14,8 @@ class Link < ApplicationRecord
   def unique_code
     loop do
       code = generate_code
-      occurrences = Link.where(code: code)
-      break unless occurrences.any?
+      return code unless Link.exists?(code: code)
     end
-
   end
 
   def generate_code
