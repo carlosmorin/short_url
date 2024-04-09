@@ -1,4 +1,4 @@
 class LinkSerializer < ActiveModel::Serializer
-  attributes :id, :original_url, :code, :short_url
+  attributes :original_url, :short_url
 
 end
