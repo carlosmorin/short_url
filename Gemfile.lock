@@ -90,6 +90,7 @@ GEM
       railties (>= 5.0.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
+    hiredis (0.6.3)
     i18n (1.14.4)
       concurrent-ruby (~> 1.0)
     jsonapi-renderer (0.2.2)
@@ -198,6 +199,7 @@ DEPENDENCIES
   active_model_serializers (~> 0.10.14)
   bootsnap
   factory_bot_rails
+  hiredis
   pg (~> 1.1)
   pry-rails
   puma (~> 5.0)
