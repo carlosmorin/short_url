@@ -13,8 +13,8 @@ class LinksController < ApplicationController
 
   def create
     @link = Link.new(link_params)
-
     if @link.save
+      save_cache
       render json: @link, status: :created, location: @link
     else
       render json: @link.errors, status: :unprocessable_entity
@@ -34,6 +34,15 @@ class LinksController < ApplicationController
   end
 
   private
+
+    def save_cache
+      Rails.cache.write(@link.code, {short_url: @link.short_url, orignial: @link.original_url})
+    end
+
+    def fecth_cache(code)
+      Rails.cache.fetch(code)
+    end
+
     def set_link
       @link = Link.find(params[:id])
     end
